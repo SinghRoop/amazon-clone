@@ -1,0 +1,115 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 20%;
+  flex-basis: 20%;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  background-color: #fff;
+  /* border: 1px solid red; */
+}
+.product__link {
+  text-decoration: none;
+  color: #111;
+}
+
+.product__title {
+  text-align: left;
+  font-size: 18px;
+  transition: 0.8s ease;
+  font-weight: 700;
+}
+.product__title:hover {
+  border-bottom: 2px solid #111;
+  transition: 0.8s ease ease-in-out;
+}
+.product__info {
+  height: 100px;
+  margin-bottom: 15px;
+}
+.product__price {
+  margin: 10px 0;
+}
+
+.product__rating {
+  display: flex;
+}
+
+.rating__icon {
+  color: #f0c14b;
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product > img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  margin-top: 45px;
+  /* border: 1px solid red; */
+}
+.product > button {
+  background-color: #f0c14b;
+  border: 1px solid lightgray;
+  padding: 4px 15px;
+  border-radius: 6px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    width: 85%;
+    flex-basis: 85%;
+  }
+
+  .product__title {
+    text-align: center;
+    font-size: 19px;
+    margin-top: 15px;
+  }
+  .product__info {
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  .product__price {
+    margin: 25px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .product__rating {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .rating__icon {
+    color: #f0c14b;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product > img {
+    margin-bottom: 35px;
+    margin-top: 85px;
+  }
+  .product > button {
+    padding: 8px 65px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+}
