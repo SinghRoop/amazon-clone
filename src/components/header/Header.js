@@ -1,14 +1,23 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react'
+=======
+import React from 'react'
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
 import './Header.css'
 import logoImg from '../../assests/images/img.png'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { auth } from '../../firebase/firebase'
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react'
 import { filterProducts } from '../../Redux/actions/actions'
 import {filterSearchProducts} from '../../Redux/actions/actions'
+=======
+import { useSelector } from 'react-redux';
+import { useState } from 'react'
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
 
 
 const Header = () => {
@@ -17,9 +26,12 @@ const Header = () => {
 
     const cart = useSelector(state => state.cart)
     const user = useSelector(state => state.user)
+<<<<<<< HEAD
     const text = useSelector(state => state.filters.text)
 
     const dispatch = useDispatch();
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
 
     // console.log(cart)
 
@@ -29,12 +41,17 @@ const Header = () => {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
     const handleClick = () => {
         setClick(!click)
     }
 
     const closeMobileMenu = () => setClick(false);
 
+<<<<<<< HEAD
     const updateFilters = (e) => {
         const name = e.target.name;
         let value = e.target.value;
@@ -46,6 +63,8 @@ const Header = () => {
         dispatch(filterSearchProducts());
       }, [text]);
     
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
     return (
         <nav className="header">
             <div className="header__logo">
@@ -67,9 +86,13 @@ const Header = () => {
 
             <div className={click ? "header__sidebar active" : "header__sidebar"}>
                 <div className="header__search">
+<<<<<<< HEAD
                     <input type="text" className="header__searchInput"
                         name="text" value={text} onChange={updateFilters}
                     />
+=======
+                    <input type="text" className="header__searchInput" />
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
                     <SearchIcon className="header__searchIcon" />
                 </div>
                 <div className="header__nav">

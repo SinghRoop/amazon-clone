@@ -4,18 +4,24 @@ import './Checkout.css'
 import CheckoutBasket from '../../components/checkoutbasket/CheckoutBasket'
 import SubTotal from '../../components/subTotal/SubTotal'
 import { useSelector } from 'react-redux';
+<<<<<<< HEAD
 import { useEffect } from 'react'
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
 
 
 const Checkout = () => {
 
     const cart = useSelector(state => state.cart)
 
+<<<<<<< HEAD
     // Set data to LocalStorage when anything changed in cart
     useEffect(() => {
         localStorage.setItem("basket", JSON.stringify(cart));
     }, [cart]);
 
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
     return (
         <>
             <div className="checkout">
@@ -32,7 +38,11 @@ const Checkout = () => {
                             </div>
                         ) : (
                             <div>
+<<<<<<< HEAD
                                 <h2 className="checkout__basket">Your Shopping Basket has {cart?.length} items</h2>
+=======
+                                <h2 className="checkout__basket">Your Shopping Basket has {cart.length} items</h2>
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
                                 {
                                     cart.map((item, index) => {
                                         return (
@@ -52,7 +62,11 @@ const Checkout = () => {
                     }
                 </div>
                 {
+<<<<<<< HEAD
                     cart?.length > 0 && (
+=======
+                    cart.length > 0 && (
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
                         <div className="checkout__right">
                             <SubTotal />
                         </div>

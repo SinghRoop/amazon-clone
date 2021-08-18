@@ -46,7 +46,11 @@ const ProductDetail = ({ rating }) => {
                 <h1>Product Detail</h1>
 
                 {
+<<<<<<< HEAD
                     Object.keys(singleProduct)?.length === 0 ? (
+=======
+                    Object.keys(singleProduct).length === 0 ? (
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
                         <div>...Loading <CircularProgress /> </div>
                     ) : (
 

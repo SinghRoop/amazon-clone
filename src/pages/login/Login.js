@@ -2,18 +2,27 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 import "./Login.css";
+<<<<<<< HEAD
 import { storage } from "../../firebase/firebase";
 import ForgotPassword from "../../components/ForgotPassword/ForgotPassword";
 
 const Login = () => {
 
+=======
+
+const Login = () => {
+  
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory()
 
   const login = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
@@ -23,7 +32,10 @@ const Login = () => {
       .catch((e) => alert(e.message));
   };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
   const register = (e) => {
     e.preventDefault();
     auth
@@ -62,9 +74,12 @@ const Login = () => {
             >
               Sign In
             </button>
+<<<<<<< HEAD
         
               <ForgotPassword />
         
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
             <p className="text">
               By signing-in your agree to company's Conditions of Use & Sale.
               Please see our Privacy Notice, our Cookies Notice and our internet

@@ -121,6 +121,7 @@
   font-size: 14px;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 1690px) {
 
   .header__searchInput {
@@ -135,6 +136,8 @@
   }
 }
 
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
 @media screen and (max-width: 1024px) {
   .header__search {
     margin-right: 10px;

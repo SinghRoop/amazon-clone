@@ -9,7 +9,10 @@ import Product from "../../components/product/Product";
 const Home = () => {
 
   const mainApi = useSelector(state => state.mainApi)
+<<<<<<< HEAD
   // const products = useSelector(state => state.filtered_products)
+=======
+>>>>>>> 261efeafd672ace095244e9416f6bfceab89cdc1
   const dispatch = useDispatch()
 
   const fetchProducts = async () => {
