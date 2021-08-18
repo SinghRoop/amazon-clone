@@ -9,28 +9,24 @@ import { auth } from "./firebase/firebase"
 import ProductDetail from "./components/productDetail/ProductDetail";
 import Footer from "./components/footer/Footer";
 import { useDispatch } from "react-redux";
+import { setUser } from "./Redux/actions/actions";
+import SignUp from "./pages/SignUp/Signup";
 
 function App() {
 
   const dispatch = useDispatch()
+
   // Piece of code which runs based on a given condition
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // The User is logged in
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
-        });
+        dispatch(setUser(authUser))
       } else {
         // The user is logged out
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        });
+        dispatch(setUser(null))
       }
     });
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,6 +41,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
           </Route>
           <Route exact path="/:productId">
             <Header />

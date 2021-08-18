@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
 import "./Login.css";
+import { storage } from "../../firebase/firebase";
+import ForgotPassword from "../../components/ForgotPassword/ForgotPassword";
 
 const Login = () => {
-  
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory()
 
   const login = (e) => {
     e.preventDefault();
+
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
@@ -19,6 +22,7 @@ const Login = () => {
       })
       .catch((e) => alert(e.message));
   };
+
 
   const register = (e) => {
     e.preventDefault();
@@ -58,6 +62,9 @@ const Login = () => {
             >
               Sign In
             </button>
+        
+              <ForgotPassword />
+        
             <p className="text">
               By signing-in your agree to company's Conditions of Use & Sale.
               Please see our Privacy Notice, our Cookies Notice and our internet

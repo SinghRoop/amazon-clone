@@ -1,13 +1,33 @@
 import React from 'react'
 import './SubTotal.css'
-import {useSelector } from 'react-redux';
-import {connect} from 'react-redux';
+import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
+// import { storage, database } from '../../firebase/firebase';
+import firebase from 'firebase';
 
 
 
 const SubTotal = (props) => {
 
     const cart = useSelector(state => state.cart)
+
+    const handleCheckout = () => {
+        // console.log('cart data', cart)
+
+        var db = firebase.firestore();
+        var cartItems = cart;
+
+        db.collection("Chekout Cart Data").doc("Cart").set({
+            cartItems
+        }, { merge: true })
+            .then(function () {
+                console.log("Document successfully written!");
+            })
+            .catch(function (error) {
+                console.error("Error writing document: ", error);
+            });
+    }
+
     return (
         <>
             <div className="subtotal">
@@ -19,7 +39,7 @@ const SubTotal = (props) => {
                     <input type="checkbox" />
                     This order contains a gift.
                 </small>
-                <button>Proceed to Checkout</button>
+                <button onClick={handleCheckout}>Proceed to Checkout</button>
             </div>
         </>
     )
@@ -39,4 +59,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, null) (SubTotal);
+export default connect(mapStateToProps, null)(SubTotal);

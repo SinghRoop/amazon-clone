@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Header.css'
 import logoImg from '../../assests/images/img.png'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { auth } from '../../firebase/firebase'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react'
+import { filterProducts } from '../../Redux/actions/actions'
+import {filterSearchProducts} from '../../Redux/actions/actions'
 
 
 const Header = () => {
@@ -15,6 +17,9 @@ const Header = () => {
 
     const cart = useSelector(state => state.cart)
     const user = useSelector(state => state.user)
+    const text = useSelector(state => state.filters.text)
+
+    const dispatch = useDispatch();
 
     // console.log(cart)
 
@@ -24,13 +29,23 @@ const Header = () => {
         }
     }
 
-
     const handleClick = () => {
         setClick(!click)
     }
 
     const closeMobileMenu = () => setClick(false);
 
+    const updateFilters = (e) => {
+        const name = e.target.name;
+        let value = e.target.value;
+        console.log(name, value);
+        dispatch(filterProducts({ name, value }));
+    };
+
+    useEffect(() => {
+        dispatch(filterSearchProducts());
+      }, [text]);
+    
     return (
         <nav className="header">
             <div className="header__logo">
@@ -52,7 +67,9 @@ const Header = () => {
 
             <div className={click ? "header__sidebar active" : "header__sidebar"}>
                 <div className="header__search">
-                    <input type="text" className="header__searchInput" />
+                    <input type="text" className="header__searchInput"
+                        name="text" value={text} onChange={updateFilters}
+                    />
                     <SearchIcon className="header__searchIcon" />
                 </div>
                 <div className="header__nav">

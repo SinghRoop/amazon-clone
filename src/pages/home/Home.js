@@ -9,6 +9,7 @@ import Product from "../../components/product/Product";
 const Home = () => {
 
   const mainApi = useSelector(state => state.mainApi)
+  // const products = useSelector(state => state.filtered_products)
   const dispatch = useDispatch()
 
   const fetchProducts = async () => {

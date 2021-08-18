@@ -1,0 +1,42 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.signup_title {
+  margin-top: 50px;
+}
+.signup_container {
+  width: 400px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--secondry-color);
+  margin-top: 20px;
+}
+
+.signup_container .form_label {
+  font-size: 1.1rem;
+}
+
+.signup_container > form > input {
+  margin: 10px 0;
+  width: 100%;
+  height: 30px;
+  padding: 8px;
+}
+.signup_terms {
+  display: flex;
+  align-items: center;
+  margin: 5px auto;
+}
+.signup_terms .signup_terms_text {
+  margin-left: 5px;
+}
+.signup_submit_btn {
+  display: block;
+  margin: 12px auto 0;
+  padding: 5px 18px;
+}

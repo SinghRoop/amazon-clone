@@ -7,7 +7,7 @@
   width: 100%;
   mask-image: linear-gradient(to buttom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   z-index: -1;
-  height: 50vh;
+  height: 65vh;
 }
 
 .home__row {

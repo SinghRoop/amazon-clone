@@ -3,6 +3,7 @@ import firebase from "firebase";
 const fireBaseApp = firebase.initializeApp({
     apiKey: "AIzaSyD-aBd5u3dhELw5qO3KPaGYTl08XvnTAPQ",
     authDomain: "e-clone-1a60a.firebaseapp.com",
+    databaseURL: "https://e-clone-1a60a-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "e-clone-1a60a",
     storageBucket: "e-clone-1a60a.appspot.com",
     messagingSenderId: "882258855432",
@@ -11,5 +12,7 @@ const fireBaseApp = firebase.initializeApp({
 });
 
 const auth = firebase.auth();
+const storage = firebase.storage();
+const database = firebase.database()
 
-export {auth};
+export {auth, storage, database};
